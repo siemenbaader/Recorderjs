@@ -1,6 +1,6 @@
 (function(window){
 
-  var WORKER_PATH = 'recorderWorker.js';
+  var WORKER_PATH = 'recorderjs-siemen/recorderWorker.js';
 
   var Recorder = function(source, cfg){
     var config = cfg || {};
@@ -34,6 +34,10 @@
           config[prop] = cfg[prop];
         }
       }
+    }
+
+    this.isRecording = function() {
+      return recording;
     }
 
     this.record = function(){
